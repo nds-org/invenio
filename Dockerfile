@@ -65,4 +65,6 @@ RUN echo "source /usr/local/bin/virtualenvwrapper.sh" >> ~/.bashrc
 RUN echo "workon invenio3" >> ~/.bashrc
 
 # Start the Invenio application:
-CMD ["/bin/bash", "-c", "invenio3 run -h 0.0.0.0"]
+#CMD ["/bin/bash", "-c", "invenio3 run -h 0.0.0.0"]
+COPY entrypoint.sh /
+ENTRYPOINT "/entrypoint.sh"
